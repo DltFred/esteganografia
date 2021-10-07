@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Criptologia - Una Capa De Seguridad</title>
+</head>
+
+<body>
+  <header id="header">
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">El proyecto</a>
+      <a href="#aboutUs">Nosotros</a>
+      <a href="#demo">Demo</a>
+    </div>
+  </header>
+  <main class="container">
+    <section id="home">
+      <img src="./utils/heroimage.jpg" alt="img">
+      <h1>Proyecto de Criptologia <br><span>Esteganografía + RSA</span></h1>
+    </section>
+    <section id="about">
+      <img src="./utils/proyectimage.jpg" alt="img home">
+      <h2>Sobre el proyecto</h2>
+      <article>
+        <p>Este Proyecto fue desarrollado como una aplicación del curso de Matemática discreta que realizó el equipo en
+          el ciclo 2020-II.
+          <br> En este trabajo utilizamos la esteganografía para anadir una capa de seguridad a la
+          criptografía.Cifraremos un mensaje y lo ocultaremos en una imagen, de modo que si la ruta del mensaje es
+          interceptada lo que se obtenga será una imagen irrelevante y no informacion sensible.
+          <br> El método esteganografico que usamos consiste en reemplazar, a conveniencia, unidades de color (RGB), de
+          modo que estos cambios no sean perceptibles a la vista humana, pero que en su conjunto y mediante algoritmos
+          nos permita insertar y leer informacion.
+          <br>
+          <br>
+          <a href="https://drive.google.com/file/d/1VA2aacfm7xP1lyQ3gtS3TbeINv7_zg4i/view?usp=sharing" rel="noopener"
+            target="_blank">Ver documento</a>
+        </p>
+      </article>
+    </section>
+    <section id="aboutUs">
+      <img src="./utils/teamimage.jpg" alt="img nosotros">
+      <h2>Sobre el equipo</h2>
+      <article>
+        <p>Somos cuatro estudiantes de la facultad de ciencias de la Universidad Nacional de Ingeniería del Perú que
+          participamos en conjunto para desarrollar el proyecto que presentamos.
+          <br>
+          <br> Los integrantes:
+          <br> Cruz Tairo Jhon Edmilson
+          <br> De la Torre Escobar Fredy
+          <br> Jimenez Chacon Joel Wilson
+          <br> Zuñiga Ñaquiche Gerson Jairo
+        </p>
+      </article>
+    </section>
+    <section id="demo">
+      <h2>Demo</h2>
+      <article>
+        <p>Esta es una pequeña demostración del proyecto que hemos desarrollado ocultando un mensaje cifrado via RSA con
+          la tecnica de esteganografía digital.
+        </p>
+        <br>
+        <p>👉 Para poder utilizar esta aplicación necesitamos obtener nuestras claves privadas y públicas (presionamos
+          generar)
+        </p>
+        <br>
+        <p>👉 Recomendamos guardar nuestra llave privada en algun lugar ya que nosotros no la conocemos.</p>
+        <br>
+        <p>👉 Tambien necesitamos cargar una imagen (recomendamos una resolucion de 300x300) donde ocultaremos el
+          mensaje cifrado y la llave pública</p>
+        <br>
+        <p>👉 Para descifrar un mensaje cargamos la imagen y colocamos nuestra llave privada. Luego hacemos click en
+          Desencriptar </p>
+      </article>
+    </section>
+    <section id="app">
+      <input type="file" name="file" id="file">
+      <div>
+        <input type="text" placeholder="ingrese clave privada" id="privateKey">
+        <button id="btnGenerar">Generar</button>
+      </div>
+      <div>
+        <div>
+          <input type="text" placeholder="ingrese clave publica" id="publicKey">
+          <input type="text" placeholder="exponente" id="exponente" value="10001">
+        </div>
+      </div>
+      <textarea id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+      <div>
+        <canvas width="300" height="300" class="img" id="entradaImg"></canvas>
+        <small>👉</small>
+        <canvas width="300" height="300" class="img" id="salidaImg"></canvas>
+      </div>
+      <div>
+        <button id="btnEncriptar">Encriptar</button>
+        <button id="btnDesencriptar">Desencriptar</button>
+      </div>
+      <a id="descargar" class="is-active">Descargar</a>
+    </section>
+  </main>
+</body>
+<script src="./RSA/jsbn.js"></script>
+<script src="./RSA/jsbn2.js"></script>
+<script src="./RSA/prng4.js"></script>
+<script src="./RSA/rng.js"></script>
+<script src="./RSA/rsa.js"></script>
+<script src="./RSA/rsa2.js"></script>
+
+<script src="./index.js" type="module"></script>
+
+</html>
